@@ -17,19 +17,18 @@ def prepare_weights():
         "image_encoder/pytorch_model.bin"
     ]
     for d, hub_file in zip(dirname,download_filename):
-        #breakpoint()
         saved_path = os.path.join(local_dir,d)
         
-        if os.path.exists(saved_path):
-            continue
-        else :
-            os.makedirs(saved_path, exist_ok=True)
+        os.makedirs(saved_path, exist_ok=True)
+        hub_file = Path(hub_file)
         hf_hub_download(
             repo_id="jeeyoung/sim2real_weights",
-            filename=hub_file,
-            local_dir=local_dir,
+            subfolder=hub_file.parent,
+            filename=hub_file.name,
+            local_dir=saved_path,
         )
         os.system(f"rm -rf {saved_path}/.cache")
 
 if __name__ == '__main__':
     prepare_weights()
+

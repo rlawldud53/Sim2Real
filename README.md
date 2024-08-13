@@ -8,13 +8,15 @@ conda activate sim2real
 pip install -r requirements.txt
 ```
 ## Checkpoints
-**Automatically downloading**: You can run the following command to download weights automatically: 
+**Automatically downloading**: You can run the following command to download pretrained checkpoints automatically: 
 ```shell
 python tools/download_weights.py
 ```
-Weights will be placed under the `./checkpoints` direcotry. The whole downloading process may take a long time.
+Checkpoints will be placed under the `./checkpoints` direcotry. The whole downloading process may take a long time.
 
-**Manually downloading**: You can also download weights manually [here]():
+**Manually downloading**: You can also download pretrained checkpoints manually [here](https://drive.google.com/drive/folders/1LEN9Eq1TQ7bi--NjEQyK1iky9tgQBvvN?usp=sharing):
+
+checkpoints should be orgnized as follows:
 ```
 checkpoints/
 ├── denoising_unet/

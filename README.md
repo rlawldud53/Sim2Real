@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```shell
 python tools/download_weights.py
 ```
-Checkpoints will be placed under the `./checkpoints` direcotry. The whole downloading process may take a long time.
+Checkpoints will be placed under the `./checkpoints` directory. The whole downloading process may take a long time.
 
 **Manually downloading**: You can also download pretrained checkpoints manually [here](https://drive.google.com/drive/folders/1LEN9Eq1TQ7bi--NjEQyK1iky9tgQBvvN?usp=sharing):
 

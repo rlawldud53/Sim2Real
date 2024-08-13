@@ -1,4 +1,4 @@
-## Envirionment
+## Environment
 ```
 git clone https://github.com/rlawldud53/Sim2Real.git
 cd Sim2Real

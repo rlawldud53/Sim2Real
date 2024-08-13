@@ -20,17 +20,16 @@ checkpoints should be orgnized as follows:
 ```
 checkpoints/
 ├── denoising_unet/
-│   ├── config.json
-│   └── diffusion_pytorch_model.safetensors
+│   └── denoising_unet.pth
 ├── image_encoder/
 │   ├── config.json
 │   └── pytorch_model.bin
 ├── pose_guider/
 │   └── pose_guider.pth
 ├── reference_unet/
-│   ├── config.json
-│   └── diffusion_pytorch_model.safetensors
+│   └── reference_unet.pth
 └── sd-image-variations-diffusers/unet/
+    ├── diffusion_pytorch_model.bin
     └── config.json
 ```
 

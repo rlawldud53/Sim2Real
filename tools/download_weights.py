@@ -17,7 +17,7 @@ def prepare_weights():
         "image_encoder/pytorch_model.bin"
     ]
     for d, hub_file in zip(dirname,download_filename):
-        breakpoint()
+        #breakpoint()
         saved_path = os.path.join(local_dir,d)
         
         if os.path.exists(saved_path):

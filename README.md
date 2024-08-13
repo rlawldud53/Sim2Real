@@ -30,7 +30,7 @@ checkpoints/
 ├── reference_unet/
 │   ├── config.json
 │   └── diffusion_pytorch_model.safetensors
-└── stable-diffusion-v1-5_unet/
+└── stable-diffusion-v1-5/unet/
     └── config.json
 ```
 

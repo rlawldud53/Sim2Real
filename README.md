@@ -3,7 +3,7 @@
 git clone https://github.com/rlawldud53/Sim2Real.git
 cd Sim2Real
 
-conda env create -f environment.yml
+conda env create -f environment.yaml
 conda activate sim2real
 pip install -r requirements.txt
 ```

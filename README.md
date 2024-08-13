@@ -8,11 +8,17 @@ conda activate sim2real
 pip install -r requirements.txt
 ```
 ## Checkpoints
+**Automatically downloading**: You can run the following command to download weights automatically: 
+```shell
+python tools/download_weights.py
+```
+Weights will be placed under the `./checkpoints` direcotry. The whole downloading process may take a long time.
+
 ## Inference
 ### Data Preparation
 We provide example images which you can find in the test_imgs directory. The data structure is outlined below:
 ```
-i2i/
+Sim2Real/
 ├── test_imgs/
 │   └── condition/
 │       ├── canny/
@@ -51,6 +57,7 @@ i2i/
 ```
 
 If you wish to use your own data, place your chosen style images and corresponding JSON files in the `test_imgs/reference` folder.
+
 In the `test_imgs/seg_map` folder, place the structure images you want to transfer that style to, along with their related JSON files formatted as segmentation maps. 
 The JSON files should contain information about the objects within the images. For detailed specifics, please refer to the format of the example JSON files we have provided
 

@@ -14,6 +14,24 @@ python tools/download_weights.py
 ```
 Weights will be placed under the `./checkpoints` direcotry. The whole downloading process may take a long time.
 
+**Manually downloading**: You can also download weights manually [here]():
+```
+checkpoints/
+├── denoising_unet/
+│   ├── config.json
+│   └── diffusion_pytorch_model.safetensors
+├── image_encoder/
+│   ├── config.json
+│   └── pytorch_model.bin
+├── pose_guider/
+│   └── pose_guider.pth
+├── reference_unet/
+│   ├── config.json
+│   └── diffusion_pytorch_model.safetensors
+└── stable-diffusion-v1-5_unet/
+    └── config.json
+```
+
 ## Inference
 ### Data Preparation
 We provide example images which you can find in the test_imgs directory. The data structure is outlined below:
@@ -66,7 +84,7 @@ These images should use the same filenames as those used in the `test_imgs/seg_m
 
 You are free to choose between using canny or panoptic styles for the condition images, based on the condition you wish to apply.
 
-## Inference 
+### Inference 
 Here we provide inference scripts. Just type following command to run inference
 ```bash
 bash scripts/inference.sh

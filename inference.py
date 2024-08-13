@@ -24,12 +24,12 @@ def main(args):
 
     # initiliaze network, ecncoder, guider
     reference_unet = UNet2DConditionModel.from_pretrained(
-        cfg.reference_unet_path,
+        cfg.pretrained_base_model_path,
         subfolder="unet",
     ).to(dtype=weight_dtype,device="cuda")
 
     denoising_unet = UNet2DConditionModel.from_pretrained(
-        cfg.denoising_unet_path,
+        cfg.pretrained_base_model_path,
         subfolder="unet",
     ).to(dtype=weight_dtype,device="cuda")
 
@@ -55,9 +55,18 @@ def main(args):
 
     width, height = args.width, args.height
    
+    # load pretrained weights
+    denoising_unet.load_state_dict(
+        torch.load(cfg.denoising_unet_path, map_location="cpu"),
+        strict=False,
+    )
+    reference_unet.load_state_dict(
+        torch.load(cfg.reference_unet_path, map_location="cpu"),
+    )
     pose_guider.load_state_dict(
         torch.load(cfg.pose_guider_path, map_location="cpu"),
     )
+    
 
     pipe = Pose2ImagePipeline(
         vae=vae,
@@ -168,7 +177,6 @@ if __name__ == "__main__":
     args, unknown = parser.parse_known_args()
 
     main(args)
-
 
 
 

@@ -19,17 +19,17 @@ def main(args):
 
     if cfg.weight_dtype == "fp16":
         weight_dtype = torch.float16
-    else: ## yaml -> fp32로 설정 안하면 에러
+    else: 
         weight_dtype = torch.float32
 
     # initiliaze network, ecncoder, guider
     reference_unet = UNet2DConditionModel.from_pretrained(
-        cfg.pretrained_base_model_path,
+        cfg.reference_unet_path,
         subfolder="unet",
     ).to(dtype=weight_dtype,device="cuda")
 
     denoising_unet = UNet2DConditionModel.from_pretrained(
-        cfg.pretrained_base_model_path,
+        cfg.denoising_unet_path,
         subfolder="unet",
     ).to(dtype=weight_dtype,device="cuda")
 
@@ -54,14 +54,7 @@ def main(args):
     generator = torch.manual_seed(args.seed)
 
     width, height = args.width, args.height
-    # load pretrained weights
-    denoising_unet.load_state_dict(
-        torch.load(cfg.denoising_unet_path, map_location="cpu"),
-        strict=False,
-    )
-    reference_unet.load_state_dict(
-        torch.load(cfg.reference_unet_path, map_location="cpu"),
-    )
+   
     pose_guider.load_state_dict(
         torch.load(cfg.pose_guider_path, map_location="cpu"),
     )
@@ -175,6 +168,7 @@ if __name__ == "__main__":
     args, unknown = parser.parse_known_args()
 
     main(args)
+
 
 
 

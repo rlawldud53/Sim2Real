@@ -1,11 +1,10 @@
 pretrained_base_model_path: "./checkpoints/sd-image-variations-diffusers"
 pretrained_vae_path: "stabilityai/sd-vae-ft-mse"
 image_encoder_path: "./checkpoints/image_encoder"
-denoising_unet_path: "./checkpoints/denoising_unet-193375.pth"
-reference_unet_path: "./checkpoints/reference_unet-193375.pth"
-
+denoising_unet_path: "./checkpoints/denoising_unet/denoising_unet.pth"
+reference_unet_path: "./checkpoints/reference_unet/reference_unet.pth"
 pose_guider_pretrain: True
-pose_guider_path: "./checkpoints/pose_guider-208250.pth"
+pose_guider_path: "./checkpoints/pose_guider/pose_guider.pth"
 #motion_module_path: "./pretrained_weights/motion_module.pth"
 
 inference_config: "./configs/inference/inference_v2.yaml"

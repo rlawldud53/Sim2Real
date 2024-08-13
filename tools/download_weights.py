@@ -94,8 +94,8 @@ def prepare_reference_unet():
         os.system(f"rm -rf {local_dir}/.cache")
 
 if __name__ == '__main__':
-    #prepare_base_model()
-    #prepare_denoising_unet()
-    #prepare_reference_unet()
-    #prepare_image_encoder()
+    prepare_base_model()
+    prepare_denoising_unet()
+    prepare_reference_unet()
+    prepare_image_encoder()
     prepare_pose_guider()

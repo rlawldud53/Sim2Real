@@ -103,3 +103,5 @@ python inference.py
 --seed 42 \ 
 ```
 You can choose either `multi_panop` or `multi_canny` for the cond_mode.
+
+The output will be saved in the format `./outputs/REF_IMG_NAME/SEG_IMG_NAME.png`
